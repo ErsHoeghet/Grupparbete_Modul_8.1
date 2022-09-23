@@ -1,0 +1,572 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&family=Frank+Ruhl+Libre:wght@700;900&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: 'Fira Sans', serif;
+}
+
+body {
+    width: 100vw;
+    height: auto;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    background-color: rgb(235, 235, 235);
+}
+
+.flexWrapper {
+    width: 1000px;
+    height: auto;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+/*  ===========================================
+                    INDEX.HTML
+    ===========================================  */
+
+/*  ===========================================
+    ÖVERGRIPANDE GEMENSAM CSS FÖR FLERA ELEMENT
+    
+    Sådana element som förekommer på många
+    ställen eller få element/selektorer men med
+    många egenskaper som är exakt lika.
+    ===========================================  */
+
+h1 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 2.8125rem;
+    font-weight: 900;
+    margin: 0;
+    text-align: left;
+    line-height: 100%;
+}
+
+h2 {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    margin: 0;
+}
+
+p {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-top: 0.8rem;
+    line-height: 1.8;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.headerBox2 p,
+.headerBox3 p {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.joinNowBtn {
+    width: 8rem;
+    height: 2.5rem;
+    background-color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 1px 2px rgba(0, 0, 0, 0.178);
+}
+
+.mainBoxUpper .grayBoxLeft,
+.mainBoxUpper .grayBoxRight {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.grayBoxLeft .contentWrapper,
+.grayBoxRight .contentWrapper {
+    width: 65%;
+    height: 45%;
+    margin: 6.5rem 0 0 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/*  ===========================================
+                MER SPECIFIK CSS
+    ===========================================  */
+
+header {
+    height: 34rem;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.headerBox1 {
+    grid-row: 1 / span 8;
+    grid-column: 1 / span 3;
+    background-color: #C7DDEA;
+    background-image: url("../img/family.png");
+    background-repeat: no-repeat;
+    background-size: 19rem;
+    background-position: bottom right;
+    display: flex;
+    justify-content: center;
+}
+
+.headerBox1 section {
+    width: 55%;
+    height: 55%;
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.headerBox1 section p {
+    margin-top: 0.8rem;
+}
+
+.headerBox1 section p span {
+    color: white;
+}
+
+.headerBox1 section .joinNowBtn {
+    margin: auto 0 0 0;
+}
+
+.headerBox2 {
+    grid-row: 1 / span 4;
+    grid-column: 4 / span 3;
+    background-color: #F17949;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerBox3 {
+    grid-row: 5 / span 4;
+    grid-column: 4 / span 3;
+    background-color: #FFB939;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    background-color: rgb(235, 235, 235);
+}
+
+nav ul {
+    padding: 0;
+    margin: 2rem 18% 2rem 18%;
+    list-style: none;
+    color: #A9A19E;
+    font-size: 0.8rem;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-around;
+}
+
+.indexMain {
+    height: 80.75rem;
+    display: grid;
+    grid-template-rows: repeat(19, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.mainBoxUpper {
+    grid-row: 1 / span 9;
+    grid-column: 1 / span 6;
+    background-color: #A9A19E;
+    display: flex;
+}
+
+.mainBoxUpper .grayBoxLeft .contentWrapper h1 {
+    color: white;
+}
+
+.mainBoxUpper .grayBoxLeft .contentWrapper .joinNowBtn {
+    margin-top: 3.6rem;
+}
+
+.mainBoxUpper .grayBoxRight .contentWrapper p {
+    margin: 0 2rem 0 2rem;
+}
+
+/*  ===========================================
+            KORTEN I MITTEN AV SIDAN
+
+    Det här var det svåraste av allt att få
+    till tror jag. Jag har säkert gjort det
+    onödigt komplicerat. Men just nu kommer
+    jag inte på något annat sätt att lösa det
+    på.
+    ===========================================  */
+
+.cardsWrapper {
+    grid-row: 7 / span 5;
+    grid-column: 1 / span 6;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 8% 0 8%;
+    position: relative;
+}
+
+.cardsWrapper .allCards {
+    width: 16rem;
+    height: 19.25rem;
+    margin-top: 2.8rem;
+    background-color: #FFFFFF;
+    z-index: 1;
+    border-radius: 5px;
+    box-shadow: 1px 3px rgba(0, 0, 0, 0.178);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardsWrapper .allCards h3 {
+    margin: 6.8rem 0 0 0;
+}
+
+.cardsWrapper .allCards p {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin: 0.5rem 1.3rem 0 1.3rem;
+}
+
+.cardsWrapper .allImgWrapperBox {
+    width: 14.75rem;
+    height: 9.375rem;
+    overflow: hidden;
+    position: absolute;
+    top: 1.3rem;
+    z-index: 2;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.cardsWrapper .imgWrapperBox1 {
+    background-color: #C7DDEA;
+    left: 1.4rem;
+}
+
+.cardsWrapper .imgWrapperBox2 {
+    background-color: #FAB131;
+}
+
+.cardsWrapper .imgWrapperBox3 {
+    background-color: #F17949;
+    right: 1.4rem;
+}
+
+.cardsWrapper .imgWrapperBox1 img {
+    width: 6.02625rem;
+    height: 10.124375rem;
+}
+
+.cardsWrapper .imgWrapperBox2 img {
+    width: 6.485625rem;
+    height: 27.0625rem;
+}
+
+.cardsWrapper .imgWrapperBox3 img {
+    width: 8.3475rem;
+    height: 22.75625rem;
+}
+
+
+/*  ===========================================
+        GULA REKTANGELN I MITTEN AV SIDAN
+
+    Testade en ny variant här och kör,
+    istället för att göra en wrapper runt all
+    text som vi måste trixa oss fram till
+    storleken på, med overflow: hidden,
+    max-width: 55ch. Verkar funka utmärkt.
+
+    ===========================================  */
+
+.mainBoxBottom {
+    grid-row: 10 / span 10;
+    grid-column: 1 / span 6;
+    background-color: #FAB131;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.mainBoxBottom h1 {
+
+    margin: 13.5rem 0 2.2rem 0;
+    color: rgba(255, 255, 255, 1);
+}
+
+.mainBoxBottom p {
+    overflow: hidden;
+    max-width: 55ch;
+    text-align: center;
+}
+
+
+/*  ===========================================
+            HOW IT WORKS-PART / CALENDAR
+    ===========================================  */
+
+.howItWorks {
+    width: auto;
+    height: 42.5rem;
+    display: flex;
+    flex-direction: column;
+    counter-reset: numbers;
+}
+
+.unplannedDiv {
+    width: auto;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.squareOne,
+.almostAllSquares {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.squareOne p,
+.almostAllSquares p {
+    overflow: hidden;
+    max-width: 30ch;
+    text-align: center;
+    line-height: normal;
+    font-size: 1.05rem;
+}
+
+.almostAllSquares h2 {
+    position: absolute;
+    color: rgba(0, 0, 0, 0.4);
+    left: 1.5rem;
+    top: 1.5rem;
+    font-size: 2.1875rem;
+}
+
+.almostAllSquares h2::after {
+    counter-increment: numbers;
+    content: counter(numbers);
+}
+
+.squareOne {
+    background-color: rgb(199, 221, 234);
+}
+
+.squareOne h1 {
+    text-align: center;
+}
+
+.squareThree {
+    background-color: rgb(235, 235, 235);
+}
+
+.squareFive {
+    background-color: rgb(241, 121, 73);
+}
+
+
+/*  ===========================================
+                      FOOTER
+    ===========================================  */
+
+footer {
+    height: 25.5rem;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    background-color: rgb(119, 117, 116);
+}
+
+.takeMeUpBar {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 6;
+    background-color: rgb(169, 161, 158);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.takeMeUpBar img {
+    margin-top: 0.6rem;
+}
+
+.takeMeUpBar p {
+    font-size: 17px;
+}
+
+
+/*  ===========================================
+                    CONTACT.HTML
+    ===========================================  */
+
+
+.contactHeader {
+    height: 340px;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    background-color: #C7DDEA;
+}
+
+.contactContentBox {
+    grid-row: 3 / span 2;
+    grid-column: 3 / span 2;
+    margin: 2.2rem 0 0 0.2rem;
+}
+
+.manAndChild {
+    grid-row: 1 / span 5;
+    grid-column: 5 / span 2;
+    background-image: url(/img/man-and-child.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin: 0 0 0 -4.3rem;
+}
+
+.contactMain {
+    height: 544px;
+    display: grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    background-color: #A9A19E;
+}
+
+.contactMainText {
+    grid-row: 2 / span 2;
+    grid-column: 1 / span 3;
+
+}
+
+.contactMainText h1 {
+    max-width: 15ch;
+    margin: 2.3rem 0 0 4.7rem;
+    color: rgb(254, 254, 254);
+}
+
+.contactMainFields {
+    grid-row: 2 / span 6;
+    grid-column: 4 / span 2;
+    margin-top: 2.8rem;
+}
+
+.contactMainFields form {
+    display: grid;
+    color: white;
+}
+
+.formProperties {
+    font-size: 14px;
+}
+
+#label1 {
+
+    font-weight: 700;
+}
+
+#input1 {
+    height: 2.4rem;
+    margin-top: 0.4rem;
+}
+
+#label2 {
+    margin: 1.65rem 0 0.4rem 0;
+    font-weight: 700;
+}
+
+#input2 {
+    height: 10.375rem;
+    min-height: 2.4rem;
+    max-height: 10.375rem;
+    min-width: 20.875rem;
+    max-width: 20.875rem;
+}
+
+#input2::placeholder {
+    padding: 0.8rem 0 0 0.8rem;
+    color: black;
+}
+
+#button {
+    width: 8.188rem;
+    height: 2.438rem;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 30px;
+    border-style: none;
+    background-color: white;
+    justify-self: flex-end;
+    margin-top: 2.1rem;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.contactFooter {
+    width: 1000px;
+    height: 407px;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    background-image: url(/img/map-contact.png);
+}
+
+.contactFooterPin {
+    grid-row: 3 / span 2;
+    grid-column: 3 / span 2;
+    justify-self: center;
+    align-self: center;
+    margin-top: 1.5rem;
+}
+
+.contactFooterAdress {
+    width: 323px;
+    height: 206px;
+    grid-row: 1 / span 4;
+    grid-column: 1 / span 3;
+    background-color: rgb(250, 177, 49);
+    color: white;
+    justify-self: center;
+    align-self: center;
+    padding-top: 1.35rem;
+    margin-top: 1.6rem;
+}
+
+.contactFooterAdress h1 {
+    text-align: center;
+    
+}
+
+.contactFooterAdress p {
+    margin-left: 1.15rem;
+    color: white;
+}
+
+.contactGraySpace {
+    height: 21.25rem;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    background-color: rgb(119, 117, 116);
+}
